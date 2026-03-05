@@ -88,6 +88,7 @@ def _cc_unsanitized_library_impl(ctx):
 
 cc_unsanitized_library = rule(
     implementation = _cc_unsanitized_library_impl,
+    provides = [CcInfo],
     attrs = {
         "dep": attr.label(
             cfg = _reset_sanitizers,
